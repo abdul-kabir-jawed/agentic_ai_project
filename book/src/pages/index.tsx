@@ -335,24 +335,9 @@ export default function Home() {
                 <h3 className="footer__title">Community</h3>
                 <ul className="footer__links-list">
                   <li>
-                    <a className="footer__link-item" href="https://github.com/abdul-kabir-jawed/agentic_ai_project">
-                      GitHub Repository
-                    </a>
-                  </li>
-                  <li>
-                    <a className="footer__link-item" href="https://github.com/abdul-kabir-jawed/agentic_ai_project/discussions">
-                      GitHub Discussions
-                    </a>
-                  </li>
-                  <li>
                     <Link className="footer__link-item" to="/docs/chapter-1-introduction-to-physical-ai">
                       Start Reading
                     </Link>
-                  </li>
-                  <li>
-                    <a className="footer__link-item" href="https://github.com/abdul-kabir-jawed/agentic_ai_project">
-                      Contributing Guide
-                    </a>
                   </li>
                 </ul>
               </div>
@@ -364,7 +349,7 @@ export default function Home() {
                 © 2025 Physical AI Initiative. All rights reserved.
               </p>
               <p className="footer__credit">
-                Powered by contributors across the <a href="https://github.com/abdul-kabir-jawed/agentic_ai_project" className="footer__credit-link">Physical AI & Humanoid Robotics</a>
+                Powered by contributors across Physical AI & Humanoid Robotics
               </p>
             </div>
           </div>
