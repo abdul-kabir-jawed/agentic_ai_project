@@ -1,0 +1,54 @@
+/* Floating chat button styling */
+
+.floatingButton {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9998;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.floatingButton button {
+  background: linear-gradient(135deg, var(--color-accent-primary), var(--color-accent-secondary));
+  border: 2px solid rgba(88, 166, 255, 0.3);
+  box-shadow: 
+    0 8px 24px rgba(88, 166, 255, 0.3),
+    0 0 0 0 rgba(88, 166, 255, 0.4);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 
+      0 8px 24px rgba(88, 166, 255, 0.3),
+      0 0 0 0 rgba(88, 166, 255, 0.4);
+  }
+  50% {
+    box-shadow: 
+      0 12px 32px rgba(88, 166, 255, 0.4),
+      0 0 0 12px rgba(88, 166, 255, 0);
+  }
+}
+
+.floatingButton button:hover {
+  transform: scale(1.05);
+  box-shadow: 
+    0 12px 32px rgba(88, 166, 255, 0.5),
+    0 0 24px rgba(88, 166, 255, 0.4);
+}
+
+@media (max-width: 768px) {
+  .floatingButton {
+    bottom: 16px;
+    right: 16px;
+  }
+}

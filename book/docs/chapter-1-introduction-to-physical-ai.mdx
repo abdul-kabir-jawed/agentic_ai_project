@@ -1,0 +1,334 @@
+---
+id: chapter-1-introduction-to-physical-ai
+title: "Chapter 1: Introduction to Physical AI"
+sidebar_position: 1
+---
+
+# Chapter 1: Introduction to Physical AI
+
+## Introduction
+
+Artificial Intelligence has transformed various aspects of our digital world, from natural language processing to complex data analytics. However, a significant frontier for AI lies in its interaction with the physical environment. This is the domain of Physical AI, a field that integrates advanced AI capabilities with robotic bodies and real-world sensing and actuation. Unlike traditional AI, which often operates purely in abstract or virtual domains, Physical AI agents are embodied, situated, and learn through direct engagement with the dynamic, unpredictable physical world.
+
+This chapter serves as a foundational introduction to Physical AI, exploring its core definitions, historical trajectory, and the fundamental concepts that underpin its development. We will delve into what distinguishes Physical AI from its purely software-based counterparts, examining the crucial roles of embodiment and sensorimotor learning. By understanding these principles, readers will be equipped to appreciate the vast applications and profound impact of Physical AI across industries, from advanced manufacturing and autonomous vehicles to healthcare and exploration.
+
+### Learning Objectives
+
+Upon completing this chapter, readers will be able to:
+
+- Define Physical AI and articulate its core distinctions from traditional, disembodied AI systems.
+- Outline the historical evolution of Physical AI, recognizing key milestones and influential research paradigms.
+- Explain the fundamental concepts of embodied intelligence and sensorimotor learning, providing concrete examples.
+- Identify and describe diverse real-world applications of Physical AI across various sectors.
+- Analyze the challenges and societal impact of integrating intelligent systems into the physical world.
+
+## 1.2 What is Physical AI?
+
+Physical AI refers to intelligent systems that are designed to perceive, reason about, and act within the physical world. These systems are inherently linked to a physical body, enabling them to interact directly with their environment rather than operating solely through digital interfaces or abstract data. This contrasts sharply with most conventional AI, such as large language models, recommendation engines, or game-playing AI, which exist purely as software.
+
+The essence of Physical AI lies in its integration of intelligence with embodiment. An AI is considered "physical" when its cognitive processes are inextricably tied to its physical form and its capacity to engage with the environment through senses and motor actions.
+
+### Core Distinctions from Traditional AI
+
+1.  **Embodiment:** The most defining characteristic. A Physical AI system possesses a physical body (e.g., a robot, an autonomous vehicle, a drone) that allows it to occupy space, manipulate objects, and move. Traditional AI often lacks this physical presence.
+2.  **Situatedness:** Physical AI operates within a specific physical and often social context. Its intelligence is not context-free but shaped by the immediate environment it is situated in. This implies dealing with real-world complexities like friction, gravity, light conditions, and human presence.
+3.  **Interaction and Feedback Loops:** There is a continuous, closed-loop interaction between the AI, its body, and the environment. Sensory inputs inform actions, which in turn change the environment and generate new sensory inputs. This dynamic feedback is fundamental for learning and adaptation. Traditional AI, while it can have feedback loops (e.g., in reinforcement learning), often receives feedback from a simulated or abstract environment.
+4.  **Real-time Processing and Dynamics:** Physical AI systems must process sensory information and generate motor commands in real-time to respond effectively to dynamic and unpredictable environments. Delays can have immediate physical consequences.
+5.  **Sensory-Motor Coupling:** Perception and action are tightly integrated. The way an agent perceives the world is influenced by its ability to act, and its actions are guided by its perceptions. This coupling allows for robust, adaptive behavior in complex physical scenarios.
+6.  **Direct Experience and Learning:** Physical AI often learns directly from physical experience through trial and error, rather than solely from pre-recorded datasets or symbolic rules. This allows for adaptation to novel situations and environments.
+
+    In summary, while traditional AI can perform remarkable feats of computation and pattern recognition, Physical AI extends intelligence into the realm of the tangible, enabling agents to operate autonomously, robustly, and adaptively in our physical reality.
+
+## 1.3 History and Evolution of Physical AI
+
+The journey towards Physical AI is deeply intertwined with the development of robotics, control theory, and cognitive science. Its history spans several decades, marked by shifts in philosophical approaches and technological advancements.
+
+- **Early Cybernetics (1940s-1950s):** The foundational ideas for Physical AI can be traced back to Norbert Wiener's work on cybernetics, which focused on control and communication in animals and machines. This field introduced concepts like feedback loops and self-regulating systems, laying the theoretical groundwork for understanding how agents interact with their environments.
+- **Foundational Robotics (1960s-1970s):** Early roboticists began experimenting with physical machines. A landmark achievement was **Shakey the Robot** (1966-1972) at SRI International. Shakey was one of the first mobile robots to integrate perception (computer vision), planning (STRIPS planner), and physical action to carry out tasks, demonstrating early forms of intelligent, embodied behavior. These systems often followed a "sense-plan-act" paradigm, relying on detailed world models.
+- **Behavior-Based Robotics (1980s-1990s):** A pivotal shift occurred with Rodney Brooks' **Subsumption Architecture** (Brooks, 1991). This paradigm challenged the traditional sense-plan-act approach, arguing for "intelligence without representation." Brooks proposed building robots with layers of simple, reactive behaviors that directly map sensory inputs to motor outputs. Complex intelligence was seen as an emergent property of these interacting behaviors, allowing robots to operate robustly in dynamic environments without needing complete internal models of the world. Examples like the Genghis robot illustrated this approach.
+- **Embodied Cognition Movement (1990s-2000s):** This period saw a growing convergence of AI, cognitive science, and robotics, emphasizing that an agent's cognition is fundamentally shaped by its physical body and its interactions with the environment. Researchers like Rolf Pfeifer and Josh Bongard significantly contributed to this perspective (Pfeifer & Bongard, 2006), highlighting how morphology (the shape and structure of the body) can simplify control and computation.
+- **Rise of Machine Learning (2000s-present):** The explosion of computational power and data, coupled with advancements in machine learning, profoundly impacted Physical AI.
+- **Reinforcement Learning (RL):** This became a powerful tool for teaching robots complex behaviors through trial and error, optimizing actions based on rewards and penalties in the environment (Sutton & Barto, 2018). RL allowed robots to learn intricate manipulation skills or locomotion policies without explicit programming.
+- **Deep Learning (DL):** Convolutional Neural Networks (CNNs) revolutionized robot perception, enabling highly accurate object recognition, scene understanding, and navigation from raw sensor data. Recurrent Neural Networks (RNNs) and Transformers began to be applied to sequential decision-making in robotics.
+- **Modern Robotics & AI Integration (2010s-present):** The last decade has witnessed unprecedented progress. Companies like Boston Dynamics have showcased highly dynamic and agile legged robots (e.g., Atlas, Spot) capable of complex maneuvers in varied terrains. Sophisticated manipulation robots, autonomous vehicles (Waymo, Cruise), and drones demonstrate capabilities that were once science fiction. The focus is now on developing general-purpose robots that can adapt to a wide range of tasks and environments, often leveraging large-scale data and simulation-to-real transfer learning.
+
+This historical overview highlights a continuous evolution from rule-based systems to behavior-based approaches, and finally to data-driven, learning-centric methods, all underpinned by the enduring principle that intelligence in the physical world is inseparable from embodiment and interaction.
+
+## 1.4 Key Concepts
+
+    At the heart of Physical AI lie two fundamental concepts: **embodied intelligence** and **sensorimotor learning**. These principles explain how physical agents acquire and demonstrate intelligence through their physical existence and continuous interaction with the world.
+
+### 1.4.1 Embodied Intelligence
+
+Embodied intelligence posits that an agent's cognitive capabilities are not solely a product of its brain or central processing unit, but are deeply intertwined with, and often emerge from, the unique characteristics of its physical body and its interactions with the environment. It challenges the traditional view of intelligence as a purely abstract, disembodied process.
+
+Key aspects of embodied intelligence include:
+
+- **Physical Form Shapes Cognition:** The specific shape, size, material properties, and degrees of freedom of a robot's body directly influence what it can perceive, how it can move, and what tasks it can accomplish. For example, a robot with many articulated fingers (like a human hand) can perform delicate manipulations that a robot with a simple two-finger gripper cannot. The body thus "affords" certain interactions and constrains others.
+- **Morphological Computation:** This concept suggests that the body itself can perform a significant amount of computation, thereby simplifying the task of the brain or controller. For instance, the passive dynamics of a walking robot's legs can generate stable gaits without complex calculations, or the compliant nature of a gripper can conform to an object's shape without precise sensing and control. This offloads computational burden from the AI system.
+- **Interaction-Driven Learning:** Intelligence develops through active engagement with the world. The body acts as an interface, providing sensory experiences and enabling motor actions that generate feedback crucial for learning. This implies that intelligence is not pre-programmed but continually developed through experience.
+- **Situatedness:** As discussed earlier, embodied intelligence is inherently situated. The AI's decisions and behaviors are context-dependent, relying on its current physical location, orientation, and the objects it directly perceives and interacts with.
+
+**Examples of Embodied Intelligence:**
+
+- **Human Hands:** The intricate structure of the human hand, with its many joints, tendons, and sensors, is not merely a tool for the brain. Its morphology enables complex dexterity, grasp stability, and fine manipulation that profoundly shape human cognitive abilities related to tool use and object interaction.
+- **Soft Robotics:** Robots made from compliant materials can adapt their shape to grasp delicate or irregular objects without needing precise force control, demonstrating morphological computation.
+- **Legged Robots:** The design of animal-inspired legs and their passive dynamics can inherently contribute to stable and efficient locomotion, reducing the need for continuous, complex control inputs.
+
+### 1.4.2 Sensorimotor Learning
+
+Sensorimotor learning is the process by which an embodied agent learns to establish and refine the mappings between its sensory inputs and its motor outputs through repeated interaction with its environment. It is a continuous feedback loop crucial for adaptive behavior in physical systems.
+
+The sensorimotor loop typically involves several stages:
+
+1. **Sensing (Perception):** The agent gathers information from its environment through various sensors. This can include cameras (visual), LiDAR (depth), microphones (auditory), force sensors (tactile), accelerometers, gyroscopes (proprioception), etc. This raw data is then processed to extract meaningful features or to build an internal representation of the environment and the agent's own state.
+2. **State Estimation:** Based on sensory inputs and its internal models, the agent estimates its current state and the state of its environment. This might involve localizing itself, identifying objects, or predicting the motion of dynamic elements.
+3. **Action Selection (Policy):** The agent decides on the appropriate motor commands or actions to achieve a goal. This is where the "learning" component often resides, as the agent's policy (the mapping from states to actions) is continuously refined. Techniques like reinforcement learning are often employed here, where actions are selected to maximize a reward signal.
+4. **Acting (Motor Control):** The selected actions are translated into specific commands for the agent's actuators (e.g., motors, grippers, propellers). The actuators then execute these commands, causing a physical change in the environment or the agent's own body.
+5. **Feedback:** The physical actions generate new sensory inputs, closing the loop. This feedback allows the agent to evaluate the outcome of its actions, learn from errors, and adapt its future behavior.
+
+#### Python Code Example: Simple Sensorimotor Learning Loop
+
+    To illustrate sensorimotor learning, consider a simple simulation of a robot attempting to reach a target in a 2D environment. The robot learns to move by continuously sensing its distance to the target and adjusting its direction.
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Define the environment and robot
+class SimpleRobot:
+    """
+    A simple 2D robot that learns to navigate to a target using sensorimotor feedback.
+    """
+    def __init__(self, initial_position, target_position, learning_rate=0.1):
+        self.position = np.array(initial_position, dtype=float)
+        self.target = np.array(target_position, dtype=float)
+        self.learning_rate = learning_rate # Step size for movement
+        self.path = [self.position.copy()] # To record the robot's trajectory
+
+    def get_sensory_input(self):
+        """
+        Simulates the robot's sensors by calculating the vector and distance to the target.
+        This represents the 'perception' phase.
+        """
+        distance_vector = self.target - self.position
+        distance = np.linalg.norm(distance_vector) # Euclidean distance
+        return distance, distance_vector
+
+    def act(self, action_vector):
+        """
+        Simulates the robot's actuators, applying a movement based on the action vector.
+        This is the 'motor control' phase.
+        """
+        # Normalize the action vector to control movement magnitude, then scale by learning rate
+        if np.linalg.norm(action_vector) > 0:
+            self.position += self.learning_rate * action_vector / np.linalg.norm(action_vector)
+        self.path.append(self.position.copy()) # Record new position
+
+    def update_policy(self, sensory_input):
+        """
+        Represents a simple learning policy: the robot decides to move directly towards the target.
+        In a more complex Physical AI, this would be a sophisticated control policy or a machine
+        learning model (e.g., a neural network trained with reinforcement learning) that maps
+        sensory states to optimal actions.
+        """
+        _, direction_to_target = sensory_input
+        return direction_to_target # The action is to move in this direction
+
+    def run_step(self):
+        """
+        Executes one full sensorimotor loop: sense, decide, act.
+        """
+        sensory_data = self.get_sensory_input() # SENSE
+        action_command = self.update_policy(sensory_data) # DECIDE (policy/learning)
+        self.act(action_command) # ACT
+        return np.linalg.norm(self.target - self.position) # Return current error (feedback)
+
+# --- Simulation Setup ---
+initial_robot_pos = [0.0, 0.0]
+fixed_target_pos = [5.0, 5.0]
+num_episodes = 100 # Maximum number of steps in the simulation
+convergence_threshold = 0.1 # How close the robot needs to get to the target to stop
+
+# Initialize the robot with its starting position and target
+robot = SimpleRobot(initial_robot_pos, fixed_target_pos)
+errors_over_time = [] # To store the error at each step
+
+print(f"Robot starting at: {robot.position}, Target at: {robot.target}")
+
+# --- Run the Simulation ---
+for i in range(num_episodes):
+    current_error = robot.run_step() # Execute one sensorimotor cycle
+    errors_over_time.append(current_error)
+
+    if current_error < convergence_threshold:
+        print(f"Robot reached target in {i+1} steps!")
+        break
+
+print(f"Simulation finished. Final position: {robot.position:.2f}, Final error: {errors_over_time[-1]:.2f}")
+
+# --- Plotting Results ---
+path_coords = np.array(robot.path)
+
+plt.figure(figsize=(12, 6))
+
+# Plot the robot's path
+plt.subplot(1, 2, 1)
+plt.plot(path_coords[:, 0], path_coords[:, 1], 'o-', markersize=3, label='Robot Path')
+plt.plot(robot.target[0], robot.target[1], 'rx', markersize=10, label='Target')
+plt.plot(initial_robot_pos[0], initial_robot_pos[1], 'go', markersize=10, label='Start')
+plt.title('Robot Movement Towards Target (2D)')
+plt.xlabel('X-coordinate')
+plt.ylabel('Y-coordinate')
+plt.grid(True)
+plt.legend()
+plt.axis('equal') # Ensure X and Y axes have the same scale
+
+# Plot the error reduction over time
+plt.subplot(1, 2, 2)
+plt.plot(errors_over_time, label='Distance to Target (Error)')
+plt.title('Error Reduction Over Steps')
+plt.xlabel('Step Number')
+plt.ylabel('Distance (Error)')
+plt.grid(True)
+plt.legend()
+
+plt.tight_layout() # Adjust subplot parameters for a tight layout
+plt.show()
+```
+
+#### Explanation of the Code
+
+This Python code provides a simplified demonstration of a sensorimotor learning loop:
+
+1. **`SimpleRobot` Class:**
+
+- **Initialization:** Sets the robot's `position`, the `target` location, and a `learning_rate` that determines how large each movement step is. It also records the `path` for visualization.
+- **`get_sensory_input()` (Sense):** This method simulates the robot's sensors. It calculates the vector pointing from the robot's current position to the target, and the Euclidean distance to the target. This information serves as the "sensory input" from the environment.
+- **`update_policy()` (Decide/Learn):** This method represents the robot's "policy" or its learning algorithm. In this basic example, the policy is simply to determine the direction to move by directly using the `direction_to_target` vector received from the sensors. In a more complex Physical AI, this function would involve sophisticated algorithms, such as a neural network trained via reinforcement learning, to decide the best action based on the current sensory state.
+- **`act()` (Act):** This method simulates the robot's actuators. It updates the robot's `position` by moving it a small step (scaled by `learning_rate`) in the direction determined by the `action_vector` from the `update_policy` method.
+- **`run_step()`:** Orchestrates one complete cycle of the sensorimotor loop: `sense` -> `decide` -> `act`. It returns the current distance (error) to the target, serving as direct feedback.
+
+2. **Simulation Loop:**
+
+- The robot repeatedly calls `run_step()` for a fixed number of `num_episodes` or until it reaches the `convergence_threshold`.
+- With each step, the robot senses its environment, calculates an action to reduce the distance to the target, and then moves. The `errors_over_time` list records the progress.
+
+3. **Visualization:**
+
+- The left subplot visualizes the robot's `path` in the 2D plane, showing its journey from the start to the target.
+- The right subplot shows how the `distance to target` (error) decreases over the `steps`, illustrating the robot's "learning" or adaptation process to achieve its goal.
+
+To run this code:
+
+1. **Dependencies:** Ensure you have `numpy` and `matplotlib` installed. If not, you can install them via pip:
+   ```bash
+   pip install numpy matplotlib
+   ```
+2. **Save:** Save the code above into a Python file (e.g., `simple_sensorimotor_robot.py`).
+3. **Execute:** Run the file from your terminal:
+   `bash
+    python simple_sensorimotor_robot.py
+    `
+   This example, though simple, effectively captures the essence of how an embodied agent continuously interacts with its environment, receives feedback, and refines its actions to achieve a goal.
+
+### Diagram: Sensorimotor Learning Loop Architecture
+
+```mermaid
+graph TD
+    A[Physical Environment] -->|Sensory Data (Vision, Force, Proprioception)| B(Sensors)
+    B --> C{Perception & State Estimation}
+    C --> D[Cognitive / Learning System]
+    D --> E{Action Planning / Policy}
+    E --> F(Actuators)
+    F -->|Motor Commands (Torque, Velocity, Position)| G[Robot Body]
+    G --> H[Physical Interaction]
+    H --> A
+
+    subgraph Robot Agent
+        B
+        C
+        D
+        E
+        F
+        G
+    end
+    Style A fill:#f9f,stroke:#333,stroke-width:2px,color:#000;
+    Style H fill:#f9f,stroke:#333,stroke-width:2px,color:#000;
+    Style B fill:#bbf,stroke:#333,stroke-width:2px;
+    Style C fill:#ccf,stroke:#333,stroke-width:2px;
+    Style D fill:#fcf,stroke:#333,stroke-width:2px;
+    Style E fill:#ccf,stroke:#333,stroke-width:2px;
+    Style F fill:#bbf,stroke:#333,stroke-width:2px;
+    Style G fill:#bbf,stroke:#333,stroke-width:2px;
+```
+
+_Figure 1.1: Comprehensive Sensorimotor Learning Loop Architecture._ This diagram illustrates the complete feedback loop of a Physical AI agent. The agent's robot body interacts with the physical environment, gathering sensory data through its sensors. This data is processed for perception and state estimation, which then informs the cognitive and learning system. An action planning policy generates motor commands for the actuators, leading to physical interaction with the environment, thus closing the loop and enabling continuous adaptation and learning.
+
+## 1.5 Applications and Impact
+
+Physical AI is not a futuristic concept; it is actively transforming numerous sectors, driving innovation, and redefining human-machine interaction. Its applications are diverse and growing rapidly.
+
+### Robotics and Automation
+
+- **Industrial Robotics:** Beyond traditional pick-and-place robots, Physical AI enables robots to perform complex manipulation tasks in unstructured environments, adapt to varying object shapes, and safely collaborate with human workers on assembly lines. This leads to more flexible and efficient manufacturing processes.
+- **Service Robotics:** From autonomous cleaning robots in commercial spaces to companion robots for the elderly, Physical AI enhances their ability to navigate dynamic environments, interact with humans, and perform diverse tasks in homes and public settings. Examples include Amazon Kiva robots in warehouses, optimizing logistics and fulfillment.
+- **Field Robotics:** Robots deployed in challenging environments, such as exploration (Mars rovers, deep-sea exploration vehicles), disaster response (search and rescue robots), and agriculture (autonomous crop monitoring and harvesting robots), heavily rely on Physical AI for autonomous navigation, perception, and decision-making in unpredictable conditions.
+
+### Autonomous Vehicles
+
+- **Self-Driving Cars:** Perhaps one of the most visible applications, autonomous vehicles (e.g., Waymo, Cruise, Tesla Autopilot) leverage advanced Physical AI to perceive their surroundings (using LiDAR, cameras, radar), predict the behavior of other road users, plan safe trajectories, and control vehicle dynamics in real-time.
+- **Drones and UAVs:** Drones equipped with Physical AI are used for package delivery, infrastructure inspection, aerial surveying, and environmental monitoring, autonomously navigating complex airspaces and adapting to weather conditions.
+
+### Healthcare
+
+- **Surgical Robots:** Systems like the Da Vinci Surgical System use advanced robotics to enhance precision and control during complex operations. Future Physical AI in surgery aims for even greater autonomy, assisting surgeons with difficult maneuvers and adapting to patient physiology.
+- **Prosthetics and Exoskeletons:** AI-powered prosthetic limbs that intelligently respond to user intent and environmental cues, and exoskeletons that assist with mobility or rehabilitation.
+- **Elderly Care:** Robots providing companionship, monitoring, and assistance with daily tasks, enhancing the independence of seniors.
+- **Drug Discovery & Lab Automation:** Robotic systems automate high-throughput screening and experimentation in laboratories, accelerating scientific research.
+
+### Human-Robot Interaction (HRI)
+
+Physical AI is central to creating robots that can understand and respond to human cues in a natural and intuitive way. This includes:
+
+- **Social Robots:** Companions and assistants (e.g., robots designed for education or elder care) use AI to recognize emotions, interpret speech and gestures, and engage in meaningful social interactions.
+- **Collaborative Robots (Cobots):** In industrial settings, cobots work alongside humans, using advanced perception and planning to ensure safety and efficiently synchronize tasks.
+
+### Exploration
+
+Physical AI is crucial for pushing the boundaries of scientific discovery in inaccessible environments. Autonomous underwater vehicles explore deep oceans, while robotic probes and rovers like NASA's Perseverance Mars Rover utilize sophisticated AI for navigation, scientific data collection, and autonomous decision-making on other planets.
+
+### Impact
+
+The impact of Physical AI is profound and far-reaching:
+
+- **Increased Efficiency and Productivity:** Automating repetitive, dangerous, or complex tasks across industries.
+- **Enhanced Safety:** Deploying robots in hazardous environments (e.g., nuclear inspection, bomb disposal, deep-sea exploration) protects human lives.
+- **Personalized Assistance:** Providing individualized care, support, and companionship in various settings.
+- **Economic Transformation:** Creating new industries, jobs, and business models, while also raising concerns about job displacement in traditional sectors.
+- **Ethical and Societal Considerations:** As Physical AI systems become more capable and autonomous, ethical questions around accountability, decision-making biases, job security, and the nature of human-machine relationships become increasingly critical. Responsible development and deployment are paramount.
+
+## 1.6 Exercises
+
+1. **Conceptual Comparison:**
+   Describe a scenario where a traditional AI (e.g., a powerful chess engine) excels, and then describe a similar complexity scenario where a Physical AI (e.g., a humanoid robot) would be necessary and why the traditional AI would fail. Focus on the differences in intelligence required.
+2. **Sensorimotor Learning Design:**
+   Imagine you are tasked with designing a robotic system to autonomously sort different colored blocks into corresponding bins.
+
+- What sensors would you primarily use?
+- What actuators would be necessary?
+- Briefly describe the sensorimotor learning process this robot would undergo. How would it learn to distinguish colors and then map those perceptions to precise gripping and placement actions?
+
+3.  **Mermaid Diagram Challenge:**
+    Draw a Mermaid diagram illustrating the architecture of an autonomous drone used for package delivery. Include key components like sensors (e.g., camera, GPS, altimeter), AI modules (e.g., navigation, obstacle avoidance, package release), and actuators (e.g., motors/propellers). Show the flow of information.
+4.  **Ethical Considerations & Impact:**
+    Discuss one significant ethical implication of the widespread adoption of Physical AI in either autonomous vehicles or healthcare robotics. Consider both potential benefits and risks, and propose a measure or guideline to mitigate the identified risk.
+
+## 1.7 References
+
+1. Brooks, R. A. (1991). Intelligence without representation. _Artificial Intelligence, 47_(1-3), 139-159.
+2. Russell, S. J., & Norvig, P. (2010). _Artificial Intelligence: A Modern Approach_ (3rd ed.). Prentice Hall. (Chapter 25: Robotics)
+3. Kiva Systems (now Amazon Robotics). (n.d.). _Official Website_. Retrieved from [https://www.amazonrobotics.com/](https://www.amazonrobotics.com/)
+4. Waymo. (n.d.). _Official Website_. Retrieved from [https://waymo.com/](https://waymo.com/)
+5. Pfeifer, R., & Bongard, J. (2007). _How the body shapes the way we think: A new view of intelligence_. MIT press.
+6. Sutton, R. S., & Barto, A. G. (2018). _Reinforcement Learning: An Introduction_ (2nd ed.). MIT Press.
