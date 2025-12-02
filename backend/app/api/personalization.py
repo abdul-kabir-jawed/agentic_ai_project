@@ -13,16 +13,30 @@ router = APIRouter(prefix="/api", tags=["personalization"])
 
 DATABASE_URL = os.getenv("DATABASE_URL")
 if not DATABASE_URL:
-    raise ValueError("DATABASE_URL not set")
+    # Don't crash import in serverless; log a clear warning instead.
+    print(
+        "WARNING: DATABASE_URL not set in environment. "
+        "Personalization endpoints will fail on DB access until this is configured."
+    )
+
 
 def get_db_connection():
     """Get a database connection."""
+    if not DATABASE_URL:
+        # Fail clearly if someone calls the endpoint without DB configured.
+        raise HTTPException(
+            status_code=500,
+            detail="DATABASE_URL is not configured on the server.",
+        )
     try:
         conn = psycopg2.connect(DATABASE_URL)
         return conn
     except Exception as e:
         print(f"Database connection error: {e}")
-        raise
+        raise HTTPException(
+            status_code=500,
+            detail=f"Database connection error: {str(e)}",
+        )
 
 
 class PersonalizationUpdate(BaseModel):
