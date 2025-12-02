@@ -67,7 +67,7 @@ default_allowed_origins = [
     "http://localhost:5173",
     "http://127.0.0.1:5173",
     "https://abdul-kabir-jawed.github.io",
-    "https://abdul-kabir-jawed.github.io/agentic_ai_projects",
+    "https://abdul-kabir-jawed.github.io/agentic_ai_project",
 ]
 
 raw_allowed = os.getenv("ALLOWED_ORIGINS", "")

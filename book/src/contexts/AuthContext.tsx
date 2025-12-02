@@ -42,7 +42,7 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 // Prefer a global override (set by env-plugin), then detect localhost, otherwise use Vercel.
 const getApiBaseUrl = () => {
   if (typeof window === 'undefined') {
-    return 'https://panaversity-robotics-hackathon.vercel.app';
+    return 'https://agenticaiproject.vercel.app';
   }
   
   // Check for global override first
@@ -61,7 +61,7 @@ const getApiBaseUrl = () => {
   }
   
   // Production fallback
-  return 'https://panaversity-robotics-hackathon.vercel.app';
+  return 'https://agenticaiproject.vercel.app';
 };
 
 const API_BASE_URL = getApiBaseUrl();

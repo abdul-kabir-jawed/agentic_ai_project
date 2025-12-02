@@ -6,7 +6,7 @@ import { useAuth } from '../contexts/AuthContext';
 // API configuration - use global override, detect localhost, otherwise Vercel
 const getApiBaseUrl = () => {
   if (typeof window === 'undefined') {
-    return 'https://panaversity-robotics-hackathon.vercel.app';
+    return 'https://agenticaiproject.vercel.app';
   }
   if ((window as any).__API_BASE_URL) {
     return (window as any).__API_BASE_URL;
@@ -18,7 +18,7 @@ const getApiBaseUrl = () => {
   if (isLocalhost) {
     return 'http://localhost:8000';
   }
-  return 'https://panaversity-robotics-hackathon.vercel.app';
+  return 'https://agenticaiproject.vercel.app';
 };
 const API_BASE_URL = getApiBaseUrl();
 const API_ENDPOINT = `${API_BASE_URL}/api/chat`;

@@ -22,16 +22,16 @@ const config: Config = {
 
   // Set the production url of your site here
   // This is the GitHub Pages URL for the repository:
-  // https://github.com/abdul-kabir-jawed/agentic_ai_projects
+  // https://github.com/abdul-kabir-jawed/agentic_ai_project
   url: 'https://abdul-kabir-jawed.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/agentic_ai_projects/',
+  baseUrl: '/agentic_ai_project/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'abdul-kabir-jawed', // GitHub user name.
-  projectName: 'agentic_ai_projects', // GitHub repo name.
+  projectName: 'agentic_ai_project', // GitHub repo name.
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
