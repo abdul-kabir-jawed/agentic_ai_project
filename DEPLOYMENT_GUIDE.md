@@ -63,19 +63,27 @@ Set these in **Vercel Dashboard → Project Settings → Environment Variables**
    - Go to https://vercel.com/dashboard
    - Click **Add New Project**
    - Import `abdul-kabir-jawed/agentic_ai_projects`
-   - Set **Root Directory** to `backend`
+   - Select the `main` branch
+   - Click **Create** (you'll configure root directory in the next step)
+   
+2. **Configure Root Directory** (after project is created):
+   - In the project overview, go to **Settings** → **General**
+   - Scroll down to **Root Directory**
+   - Click **Edit** and set it to `backend`
+   - Click **Save**
 
-2. **Configure Build Settings**:
-   - **Framework Preset**: Other
+3. **Configure Build Settings** (optional, Vercel auto-detects Python):
+   - Go to **Settings** → **General**
+   - **Framework Preset**: Other (or leave as auto-detected)
    - **Build Command**: (leave empty, Vercel auto-detects Python)
    - **Output Directory**: (leave empty)
-   - **Install Command**: `pip install -r requirements.txt`
+   - **Install Command**: `pip install -r requirements.txt` (optional, Vercel will use requirements.txt automatically)
 
-3. **Set Environment Variables**:
+4. **Set Environment Variables**:
    - Add all required environment variables listed above
    - Set them for **Production**, **Preview**, and **Development** environments
 
-4. **Deploy**:
+5. **Deploy**:
    - Click **Deploy**
    - Vercel will automatically deploy on every push to `main` branch
 
