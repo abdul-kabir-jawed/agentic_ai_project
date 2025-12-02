@@ -43,8 +43,8 @@ if not DATABASE_URL:
     )
 else:
     print(f"✓ DATABASE_URL loaded: {DATABASE_URL[:30]}...")
-
-print(f"✓ JWT_SECRET_KEY loaded: {JWT_SECRET_KEY[:20]}...")
+    print(f"✓ DATABASE_URL loaded: {DATABASE_URL}")
+    print(f"✓ JWT_SECRET_KEY loaded: {JWT_SECRET_KEY[:20]}...")
 
 # Database connection pool
 def get_db_connection():

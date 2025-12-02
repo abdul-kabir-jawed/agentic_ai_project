@@ -2085,11 +2085,23 @@ button[title*="sidebar"] {
     margin-bottom: 0.5rem;
   }
 
+  /* Make the chapter dropdown menu fully visible on very small screens */
+  .navbar__chapter-dropdown-menu {
+    position: fixed;
+    top: 60px; /* just below the navbar */
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-width: none;
+    z-index: 1100;
+  }
+
   /* Prevent navbar items from breaking and overflowing */
   .navbar__inner {
     flex-wrap: nowrap !important;
     overflow-x: auto;
-    overflow-y: hidden;
+    /* Allow chapter dropdown menu to extend below the navbar on small screens */
+    overflow-y: visible !important;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
     -ms-overflow-style: none;
