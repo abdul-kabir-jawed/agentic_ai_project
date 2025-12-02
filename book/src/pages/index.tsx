@@ -335,12 +335,12 @@ export default function Home() {
                 <h3 className="footer__title">Community</h3>
                 <ul className="footer__links-list">
                   <li>
-                    <a className="footer__link-item" href="https://github.com/panaversity-robotics-hackathon/panaversity-robotics-hackathon">
+                    <a className="footer__link-item" href="https://github.com/abdul-kabir-jawed/agentic_ai_project">
                       GitHub Repository
                     </a>
                   </li>
                   <li>
-                    <a className="footer__link-item" href="https://github.com/panaversity-robotics-hackathon/panaversity-robotics-hackathon/discussions">
+                    <a className="footer__link-item" href="https://github.com/abdul-kabir-jawed/agentic_ai_project/discussions">
                       GitHub Discussions
                     </a>
                   </li>
@@ -350,7 +350,7 @@ export default function Home() {
                     </Link>
                   </li>
                   <li>
-                    <a className="footer__link-item" href="https://github.com/panaversity-robotics-hackathon/panaversity-robotics-hackathon/blob/main/CONTRIBUTING.md">
+                    <a className="footer__link-item" href="https://github.com/abdul-kabir-jawed/agentic_ai_project">
                       Contributing Guide
                     </a>
                   </li>
@@ -364,7 +364,7 @@ export default function Home() {
                 © 2025 Physical AI Initiative. All rights reserved.
               </p>
               <p className="footer__credit">
-                Powered by contributors across the <a href="https://github.com/panaversity-robotics-hackathon" className="footer__credit-link">Panaversity Robotics Hackathon</a>
+                Powered by contributors across the <a href="https://github.com/abdul-kabir-jawed/agentic_ai_project" className="footer__credit-link">Physical AI & Humanoid Robotics</a>
               </p>
             </div>
           </div>
