@@ -4,9 +4,23 @@ import { Languages } from 'lucide-react';
 import { useAuth } from '@site/src/contexts/AuthContext';
 import ConfirmationModal from './ConfirmationModal';
 
-const API_BASE_URL =
-  (typeof window !== 'undefined' && (window as any).__API_BASE_URL) ||
-  'https://panaversity-robotics-hackathon.vercel.app';
+const getApiBaseUrl = () => {
+  if (typeof window === 'undefined') {
+    return 'https://panaversity-robotics-hackathon.vercel.app';
+  }
+  if ((window as any).__API_BASE_URL) {
+    return (window as any).__API_BASE_URL;
+  }
+  const isLocalhost = 
+    window.location.hostname === 'localhost' ||
+    window.location.hostname === '127.0.0.1' ||
+    window.location.hostname === '';
+  if (isLocalhost) {
+    return 'http://localhost:8000';
+  }
+  return 'https://panaversity-robotics-hackathon.vercel.app';
+};
+const API_BASE_URL = getApiBaseUrl();
 
 const LANGUAGES = [
   { code: 'english', label: 'English', apiCode: 'english' },

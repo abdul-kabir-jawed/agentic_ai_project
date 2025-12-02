@@ -4,9 +4,23 @@ import clsx from 'clsx';
 import { useAuth } from '@site/src/contexts/AuthContext';
 import ConfirmationModal from './ConfirmationModal';
 
-const API_BASE_URL =
-  (typeof window !== 'undefined' && (window as any).__API_BASE_URL) ||
-  'https://panaversity-robotics-hackathon.vercel.app';
+const getApiBaseUrl = () => {
+  if (typeof window === 'undefined') {
+    return 'https://panaversity-robotics-hackathon.vercel.app';
+  }
+  if ((window as any).__API_BASE_URL) {
+    return (window as any).__API_BASE_URL;
+  }
+  const isLocalhost = 
+    window.location.hostname === 'localhost' ||
+    window.location.hostname === '127.0.0.1' ||
+    window.location.hostname === '';
+  if (isLocalhost) {
+    return 'http://localhost:8000';
+  }
+  return 'https://panaversity-robotics-hackathon.vercel.app';
+};
+const API_BASE_URL = getApiBaseUrl();
 
 const TECHNICAL_OPTIONS = [
   { code: 'technical', label: 'Technical' },
@@ -92,7 +106,7 @@ const PersonalizationControls: React.FC = () => {
       return;
     }
 
-    setTechnicalLevel(code);
+      setTechnicalLevel(code);
     // If non-technical is selected, we can proceed directly
     if (code === 'non-technical') {
       // Create action that opens chat
@@ -127,7 +141,7 @@ const PersonalizationControls: React.FC = () => {
             let message = '';
             if (currentDocTitle) {
               message = `Please explain "${currentDocTitle}" in a non-technical way.`;
-            } else {
+    } else {
               message = `Please explain the current page in a non-technical way.`;
             }
             
@@ -223,7 +237,7 @@ const PersonalizationControls: React.FC = () => {
         }
 
         // Update local state
-        setExperienceLevel(code);
+      setExperienceLevel(code);
         
         // Open chatbox and auto-send message
         if (typeof window !== 'undefined' && (window as any).__openChatWithMessageAndAutoSend) {
@@ -249,7 +263,7 @@ const PersonalizationControls: React.FC = () => {
 
     // Create action that just saves (OK button)
     setPendingOkAction(() => async () => {
-      setIsOpen(false);
+    setIsOpen(false);
       setIsUpdating(true);
       
       try {
@@ -336,28 +350,28 @@ const PersonalizationControls: React.FC = () => {
           <div className="personalization-button__dropdown">
             {!technicalLevel || technicalLevel === 'non-technical' ? (
               // Step 1: Select Technical or Non-Technical
-              <div className="personalization-button__section">
-                <h4 className="personalization-button__section-title">Technical Level</h4>
-                <div className="personalization-button__options">
+            <div className="personalization-button__section">
+              <h4 className="personalization-button__section-title">Technical Level</h4>
+              <div className="personalization-button__options">
                   {TECHNICAL_OPTIONS.map(({ code, label }) => (
-                    <button
-                      key={code}
-                      type="button"
-                      className={clsx(
-                        'personalization-button__option',
-                        technicalLevel === code && 'personalization-button__option--active'
-                      )}
+                  <button
+                    key={code}
+                    type="button"
+                    className={clsx(
+                      'personalization-button__option',
+                      technicalLevel === code && 'personalization-button__option--active'
+                    )}
                       onClick={() => handleTechnicalSelect(code)}
                       disabled={isUpdating}
-                    >
-                      {label}
-                    </button>
-                  ))}
-                </div>
+                  >
+                    {label}
+                  </button>
+                ))}
               </div>
+            </div>
             ) : (
               // Step 2: If Technical selected, show Experience Levels
-              <div className="personalization-button__section">
+            <div className="personalization-button__section">
                 <div className="personalization-button__header">
                   <button
                     type="button"
@@ -366,25 +380,25 @@ const PersonalizationControls: React.FC = () => {
                   >
                     ← Back
                   </button>
-                  <h4 className="personalization-button__section-title">Experience Level</h4>
+              <h4 className="personalization-button__section-title">Experience Level</h4>
                 </div>
-                <div className="personalization-button__options">
-                  {EXPERIENCE_LEVELS.map(({ code, label }) => (
-                    <button
-                      key={code}
-                      type="button"
-                      className={clsx(
-                        'personalization-button__option',
-                        experienceLevel === code && 'personalization-button__option--active'
-                      )}
+              <div className="personalization-button__options">
+                {EXPERIENCE_LEVELS.map(({ code, label }) => (
+                  <button
+                    key={code}
+                    type="button"
+                    className={clsx(
+                      'personalization-button__option',
+                      experienceLevel === code && 'personalization-button__option--active'
+                    )}
                       onClick={() => handleExperienceSelect(code)}
                       disabled={isUpdating}
-                    >
-                      {label}
-                    </button>
-                  ))}
-                </div>
+                  >
+                    {label}
+                  </button>
+                ))}
               </div>
+            </div>
             )}
           </div>
         </>

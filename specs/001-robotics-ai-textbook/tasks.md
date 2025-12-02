@@ -316,15 +316,15 @@ This document outlines the granular, checkbox-style tasks for the Physical AI te
   - Description: Configure GitHub Actions to deploy the Docusaurus site to GitHub Pages.
   - Acceptance criteria: Docusaurus site is accessible via GitHub Pages URL.
   - Dependencies: GitHub Actions for Docusaurus build.
-- [ ] **Deploy FastAPI to serverless platform** 🟡
+- [X] **Deploy FastAPI to serverless platform** 🟡
   - Description: Deploy the FastAPI backend to a serverless platform (e.g., Vercel, Render, AWS Lambda).
   - Acceptance criteria: Backend API endpoints are publicly accessible.
   - Dependencies: FastAPI project.
-- [ ] **Configure CORS for cross-origin requests** 🔴
+- [X] **Configure CORS for cross-origin requests** 🔴
   - Description: Set up CORS middleware in FastAPI to allow frontend access.
   - Acceptance criteria: Frontend can make API requests to the backend without CORS errors.
   - Dependencies: FastAPI deployment.
-- [ ] **Set up production environment variables** 🔴
+- [X] **Set up production environment variables** 🔴
   - Description: Configure environment variables for the deployed production environment (e.g., secure API keys).
   - Acceptance criteria: Production deployment uses correct, secure environment variables.
   - Dependencies: Frontend and Backend deployments.

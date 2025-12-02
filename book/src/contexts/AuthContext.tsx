@@ -39,10 +39,32 @@ interface AuthContextType {
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 // Base URL for your FastAPI backend
-// Prefer a global override (set by env-plugin) and fall back to the Vercel deployment URL.
-const API_BASE_URL =
-  (typeof window !== 'undefined' && (window as any).__API_BASE_URL) ||
-  'https://panaversity-robotics-hackathon.vercel.app';
+// Prefer a global override (set by env-plugin), then detect localhost, otherwise use Vercel.
+const getApiBaseUrl = () => {
+  if (typeof window === 'undefined') {
+    return 'https://panaversity-robotics-hackathon.vercel.app';
+  }
+  
+  // Check for global override first
+  if ((window as any).__API_BASE_URL) {
+    return (window as any).__API_BASE_URL;
+  }
+  
+  // Detect localhost for local development
+  const isLocalhost = 
+    window.location.hostname === 'localhost' ||
+    window.location.hostname === '127.0.0.1' ||
+    window.location.hostname === '';
+  
+  if (isLocalhost) {
+    return 'http://localhost:8000';
+  }
+  
+  // Production fallback
+  return 'https://panaversity-robotics-hackathon.vercel.app';
+};
+
+const API_BASE_URL = getApiBaseUrl();
 
 // Custom hook to use the AuthContext
 export const useAuth = () => {

@@ -3,10 +3,24 @@ import { ChatAPIRequest, ChatAPIResponse, Message } from '../components/ChatWidg
 import { v4 as uuidv4 } from 'uuid';
 import { useAuth } from '../contexts/AuthContext';
 
-// API configuration - use global override if present, otherwise Vercel backend URL
-const API_BASE_URL =
-  (typeof window !== 'undefined' && (window as any).__API_BASE_URL) ||
-  'https://panaversity-robotics-hackathon.vercel.app';
+// API configuration - use global override, detect localhost, otherwise Vercel
+const getApiBaseUrl = () => {
+  if (typeof window === 'undefined') {
+    return 'https://panaversity-robotics-hackathon.vercel.app';
+  }
+  if ((window as any).__API_BASE_URL) {
+    return (window as any).__API_BASE_URL;
+  }
+  const isLocalhost = 
+    window.location.hostname === 'localhost' ||
+    window.location.hostname === '127.0.0.1' ||
+    window.location.hostname === '';
+  if (isLocalhost) {
+    return 'http://localhost:8000';
+  }
+  return 'https://panaversity-robotics-hackathon.vercel.app';
+};
+const API_BASE_URL = getApiBaseUrl();
 const API_ENDPOINT = `${API_BASE_URL}/api/chat`;
 
 interface UseChatAPIReturn {
