@@ -23,7 +23,11 @@ router = APIRouter(prefix="/api", tags=["chat"])
 # Database connection
 DATABASE_URL = os.getenv("DATABASE_URL")
 if not DATABASE_URL:
-    raise ValueError("DATABASE_URL not set")
+    # Don't crash import in serverless; log a clear warning instead.
+    print(
+        "WARNING: DATABASE_URL not set in environment. "
+        "Chat endpoint will fail on DB access until this is configured."
+    )
 
 def get_db_connection():
     """Get a database connection."""

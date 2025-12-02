@@ -34,14 +34,16 @@ REFRESH_TOKEN_EXPIRE_DAYS = 30  # 30 days
 
 # Better error messages
 if not DATABASE_URL:
-    raise ValueError(
-        f"DATABASE_URL not found!\n"
+    # Don't crash the whole app in serverless environments; log clearly instead.
+    print(
+        "WARNING: DATABASE_URL not found!\n"
         f"Looking for .env at: {ENV_PATH}\n"
         f"File exists: {ENV_PATH.exists()}\n"
-        f"Please ensure your .env file contains: DATABASE_URL=postgresql://user:password@host/database"
+        "Ensure DATABASE_URL is set in environment variables (e.g. Vercel project settings)."
     )
+else:
+    print(f"✓ DATABASE_URL loaded: {DATABASE_URL[:30]}...")
 
-print(f"✓ DATABASE_URL loaded: {DATABASE_URL[:30]}...")
 print(f"✓ JWT_SECRET_KEY loaded: {JWT_SECRET_KEY[:20]}...")
 
 # Database connection pool
@@ -56,10 +58,27 @@ def get_db_connection():
 
 app = FastAPI()
 
-# CORS middleware for local development
+# CORS middleware
+# In production, we read allowed origins from the ALLOWED_ORIGINS env var
+# (comma-separated list). Fallback to sensible defaults for local + GitHub Pages.
+default_allowed_origins = [
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+    "https://abdul-kabir-jawed.github.io",
+    "https://abdul-kabir-jawed.github.io/agentic_ai_projects",
+]
+
+raw_allowed = os.getenv("ALLOWED_ORIGINS", "")
+if raw_allowed.strip():
+    allowed_origins = [origin.strip() for origin in raw_allowed.split(",") if origin.strip()]
+else:
+    allowed_origins = default_allowed_origins
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Adjust for production
+    allow_origins=allowed_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
