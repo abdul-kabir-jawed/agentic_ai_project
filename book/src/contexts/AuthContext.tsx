@@ -39,7 +39,10 @@ interface AuthContextType {
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 // Base URL for your FastAPI backend
-const API_BASE_URL = 'http://127.0.0.1:8000'; // Adjust as needed for deployment
+// Prefer a global override (set by env-plugin) and fall back to the Vercel deployment URL.
+const API_BASE_URL =
+  (typeof window !== 'undefined' && (window as any).__API_BASE_URL) ||
+  'https://panaversity-robotics-hackathon.vercel.app';
 
 // Custom hook to use the AuthContext
 export const useAuth = () => {

@@ -4,9 +4,9 @@ import { Languages } from 'lucide-react';
 import { useAuth } from '@site/src/contexts/AuthContext';
 import ConfirmationModal from './ConfirmationModal';
 
-const API_BASE_URL = typeof window !== 'undefined' && (window as any).__API_BASE_URL 
-  ? (window as any).__API_BASE_URL 
-  : 'http://localhost:8000';
+const API_BASE_URL =
+  (typeof window !== 'undefined' && (window as any).__API_BASE_URL) ||
+  'https://panaversity-robotics-hackathon.vercel.app';
 
 const LANGUAGES = [
   { code: 'english', label: 'English', apiCode: 'english' },

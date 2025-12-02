@@ -3,10 +3,10 @@ import { ChatAPIRequest, ChatAPIResponse, Message } from '../components/ChatWidg
 import { v4 as uuidv4 } from 'uuid';
 import { useAuth } from '../contexts/AuthContext';
 
-// API configuration - change this to your backend URL
-const API_BASE_URL = typeof window !== 'undefined' && (window as any).__API_BASE_URL 
-  ? (window as any).__API_BASE_URL 
-  : 'http://localhost:8000';
+// API configuration - use global override if present, otherwise Vercel backend URL
+const API_BASE_URL =
+  (typeof window !== 'undefined' && (window as any).__API_BASE_URL) ||
+  'https://panaversity-robotics-hackathon.vercel.app';
 const API_ENDPOINT = `${API_BASE_URL}/api/chat`;
 
 interface UseChatAPIReturn {
