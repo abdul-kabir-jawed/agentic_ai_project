@@ -87,6 +87,11 @@ const PersonalizationControls: React.FC = () => {
   }, [isOpen]);
 
   const handleTechnicalSelect = (code: string) => {
+    if (!user || !session) {
+      alert('Please sign in to update personalization');
+      return;
+    }
+
     setTechnicalLevel(code);
     // If non-technical is selected, we can proceed directly
     if (code === 'non-technical') {
