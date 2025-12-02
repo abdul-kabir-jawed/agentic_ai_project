@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+pydantic
+psycopg2-binary
+python-dotenv
+bcrypt
+PyJWT
+httpx
+qdrant-client
+openai
+litellm
+bertoken
+git+https://github.com/openai/openai-agents-python.git
