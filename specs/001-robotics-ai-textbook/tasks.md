@@ -346,11 +346,11 @@ This document outlines the granular, checkbox-style tasks for the Physical AI te
   - Description: Design a high-level architecture diagram (e.g., using Mermaid) for the project.
   - Acceptance criteria: Diagram clearly illustrates system components and interactions.
   - Dependencies: Project structure.
-- [ ] **Record demo video (3-5 minutes)** 🟡
+- [X] **Record demo video (3-5 minutes)** 🟢
   - Description: Create a compelling demo video showcasing all core and bonus features.
   - Acceptance criteria: Video highlights key functionalities, is engaging, and meets time limits.
   - Dependencies: All features working, script prepared.
-- [ ] **Take screenshots of key features** 🟢
+- [X] **Take screenshots of key features** 🟢
   - Description: Capture screenshots of critical UI elements and features for the README and submission.
   - Acceptance criteria: High-quality screenshots are available.
   - Dependencies: All frontend features.
