@@ -18,11 +18,126 @@ The system is designed with a clear separation of concerns:
 
 ## Setup and Installation
 
-**(Placeholder: Detailed instructions for setting up the monorepo, installing dependencies for both backend and book, configuring environment variables, and initializing databases will go here.)**
+### Prerequisites
+
+- **Node.js** 20.x or higher
+- **Python** 3.12 or higher
+- **PostgreSQL** (Neon Serverless Postgres recommended)
+- **Qdrant Cloud** account (or self-hosted Qdrant)
+- **Google Gemini API** key
+- **Git** for version control
+
+### Step 1: Clone the Repository
+
+```bash
+git clone https://github.com/abdul-kabir-jawed/agentic_ai_project.git
+cd agentic_ai_project
+```
+
+### Step 2: Backend Setup
+
+1. **Navigate to backend directory:**
+   ```bash
+   cd backend
+   ```
+
+2. **Create virtual environment:**
+   ```bash
+   python -m venv venv
+   # On Windows:
+   venv\Scripts\activate
+   # On macOS/Linux:
+   source venv/bin/activate
+   ```
+
+3. **Install dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. **Set up environment variables:**
+   Create a `.env` file in the `backend/` directory:
+   ```env
+   DATABASE_URL=postgresql://user:password@host:port/database?sslmode=require
+   JWT_SECRET_KEY=your-secret-key-here
+   GEMINI_API_KEY=your-gemini-api-key
+   QDRANT_URL=https://your-cluster.qdrant.io
+   QDRANT_API_KEY=your-qdrant-api-key
+   ALLOWED_ORIGINS=http://localhost:3000,http://127.0.0.1:3000
+   ```
+
+5. **Initialize database:**
+   ```bash
+   python init_db.py
+   ```
+
+6. **Initialize Qdrant collection:**
+   ```bash
+   python init_qdrant_collection.py
+   ```
+
+7. **Index textbook content:**
+   ```bash
+   python index_textbook.py
+   ```
+
+### Step 3: Frontend Setup
+
+1. **Navigate to book directory:**
+   ```bash
+   cd ../book
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Start development server:**
+   ```bash
+   npm start
+   ```
+
+   The Docusaurus site will be available at `http://localhost:3000`
 
 ## Running the Project
 
-**(Placeholder: Instructions on how to run the Docusaurus frontend and FastAPI backend locally will go here.)**
+### Backend (FastAPI)
+
+From the `backend/` directory:
+
+```bash
+# Activate virtual environment first
+source venv/bin/activate  # or venv\Scripts\activate on Windows
+
+# Run the server
+python main.py
+# or
+uvicorn main:app --reload --host 0.0.0.0 --port 8000
+```
+
+The API will be available at `http://localhost:8000`
+
+### Frontend (Docusaurus)
+
+From the `book/` directory:
+
+```bash
+# Development server
+npm start
+
+# Production build
+npm run build
+
+# Serve production build
+npm run serve
+```
+
+### Access the Application
+
+- **Frontend**: `http://localhost:3000`
+- **Backend API**: `http://localhost:8000`
+- **API Docs**: `http://localhost:8000/docs` (FastAPI auto-generated docs)
 
 ## Claude Code Subagents
 
